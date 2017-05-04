@@ -1,0 +1,96 @@
+article, section, nav, div, header, footer, body{
+	margin: 0;
+	padding: 0;
+}
+img{
+	width: 100%;
+}
+input:focus, button:focus{
+	outline: none;
+}
+a{
+	text-decoration: none;
+	color: #555;
+}
+a:hover{
+	color: #2CA9E1;
+}
+/**
+ * BEGIN commons style
+ */
+.container-fluid{
+	width: 100%;
+	display: block;
+}
+
+.container{
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bg--lightblue{
+	background: #2CA9E1;
+}
+/**
+ * END commons style
+ */
+
+/**
+ * BEGIN header style
+ */
+.header__logo{
+	width: 200px;
+	display: inline-block;
+	float: left;
+}
+
+.header__search{
+	margin-left: 230px;
+    height: 92px;
+    line-height: 92px;
+    display: inline;
+    float: left;
+    position: relative;
+}
+
+.input__search{
+	height: 35px;
+    width: 350px;
+    border-radius: 25px;
+    border: 1px solid #dedede;
+    padding: 0 10px;
+}
+.btn__search{
+	position: absolute;
+    right: 10px;
+    top: 33px;
+    background: #fff;
+    border: none;
+}
+
+.header__right{
+	float: right;
+    display: inline-block;
+}
+.header__right>ul{
+	list-style-type: none;
+    list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+.header__right>ul>li{
+	display: inline-block;
+	width: 70px;
+	text-align: center;
+	padding: 0 10px;
+	border-right: 1px dashed #ccc;
+}
+
+.header__right>ul>li:last-child{
+	padding-right: 0;
+	border-right: none;
+}
+/**
+ * END header style
+ */
