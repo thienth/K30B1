@@ -1,0 +1,149 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.height-70{
+	min-height: 70px;
+}
+.height-100{
+	min-height: 100px;
+}
+.height-800{
+	min-height: 800px;
+}
+img{
+	width: 100%;
+}
+.container{
+	width: 960px;
+	margin: auto;
+}
+.clearfix:after, .clearfix:before, .container:after{
+	clear: both;
+	display: table;
+	content: " ";
+}
+/*
+	Header
+ */
+.header{
+	margin: 10px 0;
+}
+.logo{
+	width: 50px;
+	float: left;
+}
+.main-menu{
+	float: right;
+}
+.main-menu ul{
+	list-style: none;
+    list-style-type: none;
+    display: flex;
+    margin-top: 13px;
+}
+.main-menu ul li a{
+	border-radius: 3px;
+    padding: 5px 10px;
+    margin-right: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.main-menu ul li a:hover, .main-menu ul li a.active{
+    background: #6fb048;
+    color: #fff;
+}
+/*
+	Slide show
+ */
+.slide-show > .item{
+	height: 420px;
+    overflow-y: hidden;
+    position: relative;
+}
+.slide-show > .item > .content{
+	position: absolute;
+    top: 150px;
+    left: 150px;
+    color: #fff;
+}
+.slide-show > .item > .content button{
+	font-size: 17px;
+    color: #fff;
+    background: #6fb048;
+    padding: 10px 25px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 2px;
+}
+/*
+	MAIN CONTENT
+ */
+
+/*
+	FEATURE
+ */
+.perfect-feature header, .feature-bottom, .feature-top{
+    margin-top: 60px;
+	text-align: center;
+	color: #0f5f5c;
+}
+.perfect-feature p, .feature-unit p, .feature-top p{
+	color: #83a7a5;
+}
+.perfect-feature header hr, .feature-top hr{
+	width: 100px;
+    margin: 20px auto;
+    border-top: 1px solid #6fb048;
+}
+.feature-unit{
+	text-align: center;
+	width: 32%;
+	float: left;
+	margin-left: 3px; 
+}
+.feature-icon{
+	width: 50px;
+    margin: auto;
+}
+.perfect-feature{
+	background: #eef1ec;
+}
+.perfect-feature content .image{
+	float: left;
+    width: 40%;
+    overflow-y: hidden;
+    height: 430px;
+}
+.perfect-feature header{
+	margin-bottom: 60px;
+}
+.perfect-feature .description{
+    width: 57%;
+    float: left;
+    height: 430px;
+    padding-top: 10%;
+}
+.perfect-feature .description ul{
+	list-style: none;
+	list-style-type: none;
+}
+.perfect-feature .description li{
+	background: url(../images/check.png) no-repeat left top;
+    list-style: none;
+    padding-left: 20px;
+    background-size: 16px;
+    color: #83a7a5;
+}
+.perfect-feature .description h2{
+	color: #0f5f5c;
+}
+.pricing-table{
+	display: table;
+}
+.pricing-cell {
+	border: 1px solid #000;
+	display: table-cell;
+	width: 30%;
+	margin-left: 20px; 
+}
