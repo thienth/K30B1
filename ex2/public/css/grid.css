@@ -1,0 +1,126 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+img{
+	width: 100%;
+}
+ul{
+	padding-left: 20px;
+}
+.container{
+	width: 960px;
+	margin: auto;
+	display: block;
+}
+.row{
+	display: block;
+	margin: 0 -15px;
+}
+.row:after, .row:before{
+	display: table;
+    content: " ";
+}
+[class*="col-"]{
+	float: left;
+	/*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+   
+}
+.col-1{
+	width: 8.333333%;
+}
+
+.col-2{
+	width: 16.66667%;
+}
+
+.col-3{
+	width: 25%;
+}
+
+.col-4{
+	width: 33.33333%;
+}
+
+.col-5{
+	width: 41.6666667%;
+}
+
+.col-6{
+	width: 50%;
+}
+
+.col-7{
+	width: 58.333333%;
+}
+
+.col-8{
+	width: 66.666667%;
+}
+
+.col-9{
+	width: 75%;
+}
+
+.col-10{
+	width: 83.333333%;
+}
+
+.col-11{
+	width: 91.666667%;
+}
+
+.col-12{
+	width: 100%;
+}
+
+/*section.container{
+	min-height: 900px;
+}*/
+.bg-red{
+	background: lightpink;
+}
+.bg-green{
+	background: lightgreen;
+}
+.bg-blue{
+	background: lightblue;
+}
+.bg-grey{
+	background: #dedede;
+}
+.bg-yellow{
+	background: yellow;
+}
+.container:before, .container:after,.clearfix:after, .clearfix:before, .row:after{
+	clear: both;
+	display: table;
+	content: " ";
+}
+.height-50{
+	min-height: 50px;
+}
+.height-100{
+	min-height: 100px;
+}
+.height-150{
+	min-height: 150px;
+}
+.height-200{
+	min-height: 200px;
+}
+.height-250{
+	min-height: 250px;
+}
+.height-300{
+	min-height: 300px;
+}
+
+
+
+
+.best-feature {
+	width: 300px;
+	margin: auto;
+}

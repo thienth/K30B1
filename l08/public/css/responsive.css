@@ -1,0 +1,26 @@
+.main-response{
+	background: blue;
+	min-height: 300px;
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+.main-response2{
+	float: left;
+	background: green;
+	min-height: 300px;
+	width: 50%;
+	display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    .main-response {
+        background: lightgreen;
+        display: block;
+		width: 100%;
+		clear: both;
+    }
+    .main-response2{
+    	display: none;
+    }
+}
