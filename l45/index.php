@@ -50,6 +50,7 @@ $result = $stmt->fetchAll();
 	 				<td><?= $v['address']?></td>
 	 				<td>
 	 					<a href="remove-user.php?id=<?=$v['id']?>" title="">Remove</a>
+	 					<a href="update-user.php?id=<?=$v['id']?>" title="">Update</a>
 	 				</td>
 	 			</tr>
  				<?php
