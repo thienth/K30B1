@@ -58,38 +58,41 @@ $result = $stmt->fetchAll();
  		</tbody>
  	</table>
 
- 	<form action="save-user.php" method="post">
- 		<div>
- 			<label for="">Email:</label>
- 			<input type="text" name="email" placeholder="Email">
- 		</div>
- 		<div>
- 			<label for="">Password:</label>
- 			<input type="password" name="password" placeholder="Password">
- 		</div>
- 		<div>
- 			<label>Confirm Password:</label>
- 			<input type="password" name="cf-password" placeholder="Confirm Password">
- 		</div>
- 		<div>
- 			<label>Role:</label>
- 			<input type="radio" name="role_id" value="100"> <label>Student</label>
- 			<input type="radio" name="role_id" value="500"> <label>Supervisor</label>
- 			<input type="radio" name="role_id" value="900"> <label>Super admin</label>
- 		</div>
- 		<div>
- 			<label>Full name:</label>
- 			<input type="text" name="name" placeholder="Full name">
- 		</div>
- 		<div>
- 			<label>Address:</label>
- 			<input type="text" name="address" placeholder="Address">
- 		</div>
- 		<div>
- 			<button type="submit">Save</button>
- 		</div>
+ 	<fieldset>
+ 		<legend>Create new user</legend>
+ 		<form action="save-user.php" method="post">
+	 		<div>
+	 			<label for="">Email:</label>
+	 			<input type="text" name="email" placeholder="Email">
+	 		</div>
+	 		<div>
+	 			<label for="">Password:</label>
+	 			<input type="password" name="password" placeholder="Password">
+	 		</div>
+	 		<div>
+	 			<label>Confirm Password:</label>
+	 			<input type="password" name="cf-password" placeholder="Confirm Password">
+	 		</div>
+	 		<div>
+	 			<label>Role:</label>
+	 			<input type="radio" name="role_id" value="100"> <label>Student</label>
+	 			<input type="radio" name="role_id" value="500"> <label>Supervisor</label>
+	 			<input type="radio" name="role_id" value="900"> <label>Super admin</label>
+	 		</div>
+	 		<div>
+	 			<label>Full name:</label>
+	 			<input type="text" name="name" placeholder="Full name">
+	 		</div>
+	 		<div>
+	 			<label>Address:</label>
+	 			<input type="text" name="address" placeholder="Address">
+	 		</div>
+	 		<div>
+	 			<button type="submit">Save</button>
+	 		</div>
 
- 	</form>
+ 		</form>
+ 	</fieldset>
  </body>
  </html>
 
