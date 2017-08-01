@@ -48,7 +48,9 @@ $result = $stmt->fetchAll();
 	 				<td><?= $v['name']?></td>
 	 				<td><?= $v['avatar']?></td>
 	 				<td><?= $v['address']?></td>
-	 				<td></td>
+	 				<td>
+	 					<a href="remove-user.php?id=<?=$v['id']?>" title="">Remove</a>
+	 				</td>
 	 			</tr>
  				<?php
  			}
