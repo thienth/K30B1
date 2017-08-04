@@ -1,7 +1,7 @@
 <?php 
 // 1. Lấy id từ url
 $id = isset($_GET['id']) == true ? $_GET['id'] : null;
-if($id = null){
+if($id == null){
 	echo "ID không hợp lệ";
 	die;
 }
@@ -19,11 +19,11 @@ try{
 	echo $ex->getMessage();
 	die;
 }
+
 // 2.2 tạo câu query để lấy dữ liệu từ db
 $query = "select * from users where id = :id";
-$stmt = $conn->prepare($query);
-$stmt->bindValue(':id', $id);
-
+$stmt = $connect->prepare($query);
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 
 $rs = $stmt->fetch();
@@ -45,6 +45,39 @@ if($rs === false){
  	<link rel="stylesheet" href="">
  </head>
  <body>
- 	
+ 	<fieldset>
+ 		<legend>Update user</legend>
+ 		<form action="save-user.php" method="post">
+	 		<div>
+	 			<label>Role:</label>
+	 			<?php 
+	 			$checked = $rs['role_id'] == 100 ? "checked" : "";
+	 			 ?>
+	 			<input type="radio" <?= $checked?> name="role_id" value="100"> <label>Student</label>
+
+	 			<?php 
+	 			$checked = $rs['role_id'] == 500 ? "checked" : "";
+	 			 ?>
+	 			<input type="radio" <?= $checked?> name="role_id" value="500"> <label>Supervisor</label>
+
+	 			<?php 
+	 			$checked = $rs['role_id'] == 900 ? "checked" : "";
+	 			 ?>
+	 			<input type="radio" <?= $checked?> name="role_id" value="900"> <label>Super admin</label>
+	 		</div>
+	 		<div>
+	 			<label>Full name:</label>
+	 			<input type="text" name="name" value="<?= $rs['name']?>" placeholder="Full name">
+	 		</div>
+	 		<div>
+	 			<label>Address:</label>
+	 			<input type="text" value="<?= $rs['address']?>" name="address" placeholder="Address">
+	 		</div>
+	 		<div>
+	 			<button type="submit">Save</button>
+	 		</div>
+
+ 		</form>
+ 	</fieldset>
  </body>
  </html>
