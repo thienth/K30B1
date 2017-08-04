@@ -47,7 +47,8 @@ if($rs === false){
  <body>
  	<fieldset>
  		<legend>Update user</legend>
- 		<form action="save-user.php" method="post">
+ 		<form action="save-update-user.php" method="post">
+ 		<input type="hidden" name="id" value="<?=$id?>">
 	 		<div>
 	 			<label>Role:</label>
 	 			<?php 
