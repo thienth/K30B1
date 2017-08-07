@@ -1,4 +1,9 @@
 <?php 
+session_start();
+if(!isset($_SESSION['userinfo'])){
+	header('location: login.php');
+	die;
+}
 // 1. Lấy id từ url
 $id = isset($_GET['id']) == true ? $_GET['id'] : null;
 if($id == null){

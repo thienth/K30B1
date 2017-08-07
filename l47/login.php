@@ -1,10 +1,10 @@
 <?php 
 session_start();
+$msg = "";
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$email = isset($_POST['email']) == true ? $_POST['email'] : "";
 	$password = isset($_POST['password']) == true ? $_POST['password'] : "";
-
-	$msg = "";
+	
 	if($email == "" || $password == ""){
 		$msg = "Dữ liệu không hợp lệ!";
 	}else{
