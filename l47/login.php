@@ -1,4 +1,5 @@
 <?php 
+session_start();
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$email = isset($_POST['email']) == true ? $_POST['email'] : "";
 	$password = isset($_POST['password']) == true ? $_POST['password'] : "";

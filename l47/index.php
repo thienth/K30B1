@@ -38,7 +38,7 @@ $result = $stmt->fetchAll();
  					<?php 
  					if(isset($_SESSION['userinfo'])){
  				 	?>
- 				 	<b>Hello Mr.<?= $_SESSION['username']['name']?>,</b>
+ 				 	<b>Hello Mr.<?= $_SESSION['userinfo']['name']?>,</b>
 					<a href="logout.php" title="">Logout</a>
  				 	<?php }else{ ?>
 			 		
