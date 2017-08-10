@@ -18,4 +18,13 @@ var_dump($conBo);
 // hành động của đối tượng này 
 // Tiến hành demo sau 10 phút
 
+/**
+ * Bài tập về nhà: 
+ * 1. Thực hiện viết class Ô tô
+ * 2. Thực hiện viết class Con vịt
+ * 3. Thực hiện viết class Hoa
+ */
+
+
+
  ?>
