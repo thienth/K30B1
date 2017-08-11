@@ -6,13 +6,13 @@ class BaseModel
 {
 	public static function find($id = null){
 		if($id != null){
-			$query = "select * from :tablename where id = :id";
+			$query = "select * from " . static::$table . " where id = :id";
 			$conn = BaseModel::getConnect();
 			$stmt = $conn->prepare($query);
-			$stmt->bindValue(':tablename', static::$table);
-			$stmt->bindValue('id', $id);
+			$stmt->bindValue(':id', $id);
 			$stmt->execute();
 			$rs = $stmt->fetchAll(PDO::FETCH_CLASS, static::class);
+
 			if(count($rs) > 0){
 				return $rs[0];
 			}

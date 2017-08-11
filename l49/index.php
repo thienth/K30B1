@@ -1,15 +1,8 @@
 <?php 
-require_once 'Animal.php';
-require_once 'Dog.php';
-require_once 'Cat.php';
-$rex = new Dog();
-$rex->hairColor = 'red';
-var_dump($rex->hairColor);
-// $tom = new Cat('Tom', 100, 20, 'blue');
-// $rex->feed(1);
-// $tom->feed(1);
-// echo Animal::$username;
+require_once './models/BaseModel.php';
+require_once './models/UserModel.php';
 
-// Animal::$username = 'Quan NV';
-// echo Cat::find()->where('age', '>', 3)->get();
+$anhmt = UserModel::find(1);
+var_dump($anhmt);
+
  ?>
