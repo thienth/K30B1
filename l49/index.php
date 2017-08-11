@@ -1,8 +1,9 @@
 <?php 
 require_once './models/BaseModel.php';
 require_once './models/UserModel.php';
+require_once './models/ClassesModel.php';
 
-$anhmt = UserModel::find(1);
+$anhmt = ClassesModel::find(1);
 var_dump($anhmt);
 
  ?>
