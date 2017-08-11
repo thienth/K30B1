@@ -10,7 +10,7 @@ class Animal extends Ceil{
 	// var $name;
 	// var $age;
 	// var $weight;
-	// var $hairColor;
+	protected $hairColor;
 	const LEG_NUMBER = 1;
 	static $username = 'Linh NT';
 
