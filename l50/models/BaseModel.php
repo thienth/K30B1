@@ -41,6 +41,24 @@ class BaseModel
 	    return false;
 	}
 
+	// Hàm nối tiếp sau hàm where để tạo ra câu lệnh select * from table where điều kiện 1 or điều kiện 2
+	// Trả về object/false;
+	public function orWhere(){
+		if ( func_num_args() >= 2 ){
+
+			$this->queryBuilder .= " or ";
+			$compare = func_num_args() > 2 ? func_get_args()[1] : "=";
+			$column = func_get_args()[0];
+			$value = func_num_args() > 2 ? func_get_args()[2] : func_get_args()[1];
+
+			$this->queryBuilder .= " $column $compare :value".count($this->paramArr);
+			$this->paramArr[] = $value;
+			
+			return $this;
+	    }
+	    return false;
+	}
+
 	// Hàm dựa vào câu query builder của các hàm where để lấy ra toàn bộ thông tin của cần tìm trong các câu lệnh where
 	// Trả về list object/null
 	public function get(){
@@ -53,6 +71,24 @@ class BaseModel
 		$stmt->execute();
 		$rs = $stmt->fetchAll(PDO::FETCH_CLASS, static::class);
 		return $rs;
+	}
+
+	// Hàm dựa vào câu query builder của các hàm where để lấy ra phần tử đầu tiên cần tìm trong các câu lệnh where
+	// Trả về object/null
+	public function first(){
+		
+		$conn = BaseModel::getConnect();
+		$stmt = $conn->prepare($this->queryBuilder);
+		for ($i=0; $i < count($this->paramArr); $i++) { 
+			$stmt->bindValue(':value'.$i, $this->paramArr[$i]);
+		}
+		$stmt->execute();
+		$rs = $stmt->fetchAll(PDO::FETCH_CLASS, static::class);
+		
+		if(count($rs) > 0){
+			return $rs[0];
+		}
+		return null;
 	}
 
 	// Hàm tìm ra đối tượng có id = tham số truyền vào (trả về object)
