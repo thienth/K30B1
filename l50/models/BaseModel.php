@@ -22,7 +22,9 @@ class BaseModel
 	    }
 	    return false;
 	}
-	
+
+	// Hàm nối tiếp sau hàm where để tạo ra câu lệnh select * from table where điều kiện 1 and điều kiện 2
+	// Trả về object/false;
 	public function andWhere(){
 		if ( func_num_args() >= 2 ){
 
