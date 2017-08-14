@@ -73,11 +73,30 @@ class BaseModel
 		return $rs;
 	}
 
+	// Thêm order by cho câu lệnh query builder
+	public function orderBy($column, $sortOrder = 'asc'){
+
+		if($this->orderByArr == null){
+			$this->orderByArr = [];
+		}
+		$this->orderByArr[$column] = $sortOrder;
+
+		return $this;
+	}
+
 	// Hàm dựa vào câu query builder của các hàm where để lấy ra phần tử đầu tiên cần tìm trong các câu lệnh where
 	// Trả về object/null
 	public function first(){
 		
 		$conn = BaseModel::getConnect();
+		if($this->orderByArr != null && count($this->orderByArr) > 0){
+			$this->queryBuilder .= " order by ";
+			foreach ($this->orderByArr as $key => $value) {
+				$this->queryBuilder .= " $key $value, ";
+			}
+			$this->queryBuilder = rtrim($this->queryBuilder,", ");
+		}
+		// var_dump($this);die;
 		$stmt = $conn->prepare($this->queryBuilder);
 		for ($i=0; $i < count($this->paramArr); $i++) { 
 			$stmt->bindValue(':value'.$i, $this->paramArr[$i]);
