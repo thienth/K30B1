@@ -22,10 +22,27 @@ class BaseModel
 	    }
 	    return false;
 	}
+	
+	public function andWhere(){
+		if ( func_num_args() >= 2 ){
+
+			$this->queryBuilder .= " and ";
+			$compare = func_num_args() > 2 ? func_get_args()[1] : "=";
+			$column = func_get_args()[0];
+			$value = func_num_args() > 2 ? func_get_args()[2] : func_get_args()[1];
+
+			$this->queryBuilder .= " $column $compare :value".count($this->paramArr);
+			$this->paramArr[] = $value;
+			
+			return $this;
+	    }
+	    return false;
+	}
 
 	// Hàm dựa vào câu query builder của các hàm where để lấy ra toàn bộ thông tin của cần tìm trong các câu lệnh where
 	// Trả về list object/null
 	public function get(){
+		
 		$conn = BaseModel::getConnect();
 		$stmt = $conn->prepare($this->queryBuilder);
 		for ($i=0; $i < count($this->paramArr); $i++) { 
