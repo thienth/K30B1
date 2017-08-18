@@ -7,6 +7,7 @@ class BaseModel
 
 	// Thực hiện thêm mới/cập nhật thông tin của đối tượng
 	public function save(){
+		$connect = BaseModel::getConnect();
 		if(!isset($this->id) || $this->id == null || $this->id <= 0){
 			// Xây dựng câu query insert into tablename (
 			$this->queryBuilder = "insert into " . $this::$table;
@@ -25,7 +26,7 @@ class BaseModel
 			}
 			$this->queryBuilder = rtrim($this->queryBuilder, ",");
 			$this->queryBuilder .= ")";
-			$connect = BaseModel::getConnect();
+			
 			$stmt = $connect->prepare($this->queryBuilder);
 
 			// Bind dữ liệu vào trong câu query đã được hình thành ở trên
@@ -39,6 +40,30 @@ class BaseModel
 
 			return $result;
 			
+		}else{
+			$this->queryBuilder = "update " . $this::$table . " set ";
+			for ($i=0; $i < count($this::$attributes); $i++) { 
+				$data = isset($this->{$this::$attributes[$i]}) == false ? null : $this->{$this::$attributes[$i]};
+				if($data == null){
+					continue;
+				}
+				$this->queryBuilder .= $this::$attributes[$i]  . " = :"
+				 . $this::$attributes[$i] . ",";
+			}
+			$this->queryBuilder = rtrim($this->queryBuilder, ",");
+			$this->queryBuilder .= " where id = :id";
+			$stmt = $connect->prepare($this->queryBuilder);
+			// Bind dữ liệu vào trong câu query đã được hình thành ở trên
+			for ($i=0; $i < count($this::$attributes); $i++) { 
+				$data = isset($this->{$this::$attributes[$i]}) == false ? null : $this->{$this::$attributes[$i]};
+				if($data == null){
+					continue;
+				}
+				$stmt->bindValue(":" . $this::$attributes[$i] , $data);
+			}
+			$stmt->bindValue(":id", $this->id);
+			$rs = $stmt->execute();
+			return $rs;
 		}
 	}
 	// Hàm mục đích tạo ra model thuộc dạng static có chứa câu query builder: select * from tên bảng where tên cột =(hoặc phép so sánh ở vị trí thứ 2) 'giá trị cần tìm kiếm'
