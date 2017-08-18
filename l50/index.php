@@ -3,10 +3,9 @@ require_once './models/BaseModel.php';
 require_once './models/UserModel.php';
 require_once './models/ClassesModel.php';
 
-$anhmt = UserModel::where('name', 'like', '%nguyen%')
-					->orWhere('address', 'like', '%nam%')
-					->orderBy('id', 'desc')
-					->orderBy('name')
-					->first();
-var_dump($anhmt);
+$quanhiv = UserModel::find(7);
+if($quanhiv != null){
+	var_dump($quanhiv->delete());
+}
+
  ?>
