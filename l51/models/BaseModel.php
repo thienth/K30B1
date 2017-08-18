@@ -7,7 +7,7 @@ class BaseModel
 
 	// Thực hiện thêm mới/cập nhật thông tin của đối tượng
 	public function save(){
-		if($this->id == null || $this->id <= 0){
+		if(!isset($this->id) || $this->id == null || $this->id <= 0){
 			// Xây dựng câu query insert into tablename (
 			$this->queryBuilder = "insert into " . $this::$table;
 			$this->queryBuilder .= " (";
@@ -30,12 +30,13 @@ class BaseModel
 
 			// Bind dữ liệu vào trong câu query đã được hình thành ở trên
 			for ($i=0; $i < count($this::$attributes); $i++) { 
-				$stmt->bindValue(":" . $this::$attributes[$i] , $this->{$this::$attributes[$i]});
+				$data = isset($this->{$this::$attributes[$i]}) == false ? "": $this->{$this::$attributes[$i]};
+				$stmt->bindValue(":" . $this::$attributes[$i] , $data);
 			}
 
 			// Thực hiện thực thi câu lệnh với cơ sở dữ liệu
 			$result = $stmt->execute();
-			
+
 			return $result;
 			
 		}
