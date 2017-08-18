@@ -3,13 +3,14 @@ require_once './models/BaseModel.php';
 require_once './models/UserModel.php';
 require_once './models/ClassesModel.php';
 
-$quannv = new UserModel();
+$duytd = new UserModel();
 
-$quannv->email = 'quannv@gmail.com';
-$quannv->password = md5('123456');
-$quannv->name = 'nguyen van quan';
-$quannv->address = "Thai Binh";
-$quannv->save();
+$duytd->email = 'duytd@gmail.com';
+$duytd->password = md5('123456');
+$duytd->name = 'Tran Dinh Duy';
+$duytd->address = "Hai Phong";
+// var_dump($duytd);die;
+echo $duytd->save();
 
 
  ?>
