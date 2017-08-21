@@ -206,6 +206,7 @@ class BaseModel
 	// Hàm tìm ra tất cả các bản ghi trong cơ sở dữ liệu của 1 bảng có model đại diện
 	// Trả về list object
 	public static function all(){
+		
 		$query = "select * from " . static::$table;
 		$conn = BaseModel::getConnect();
 		$stmt = $conn->prepare($query);
