@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require_once 'controllers/HomeController.php';
+require_once 'controllers/UserController.php';
 
 $url = isset($_GET['url']) == true ? $_GET['url'] : "/";
 
@@ -9,11 +10,13 @@ switch ($url) {
 		$ctl = new HomeController();
 		$ctl->index();
 		break;
-	case 'create-user':
-		echo "Create user form";
-		// require_once 'UserController.php';
-		// $ctl = new UserController();
-		// $ctl->createForm();
+	case 'create':
+		$ctl = new UserController();
+		$ctl->createUser();
+		break;
+	case 'save-user':
+		$ctl = new UserController();
+		$ctl->saveUser();
 		break;
 	
 	default:

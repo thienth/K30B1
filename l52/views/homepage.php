@@ -14,6 +14,9 @@
 			<th>Email</th>
 			<th>Name</th>
 			<th>Address</th>
+			<th>
+				<a href="create" title="">Create</a>
+			</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -24,6 +27,7 @@
 			echo "<td>$value->email</td>";
 			echo "<td>$value->name</td>";
 			echo "<td>$value->address</td>";
+			echo "<td></td>";
 			echo "</tr>";
 		}
 		 ?>
