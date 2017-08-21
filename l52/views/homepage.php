@@ -13,6 +13,7 @@
 			<th>Id</th>
 			<th>Email</th>
 			<th>Name</th>
+			<th>Avatar</th>
 			<th>Address</th>
 			<th>
 				<a href="create" title="">Create</a>
@@ -26,8 +27,14 @@
 			echo "<td>$value->id</td>";
 			echo "<td>$value->email</td>";
 			echo "<td>$value->name</td>";
+			echo "<td>
+					<img src=" . $value->avatar . " width='100'>
+				</td>";
 			echo "<td>$value->address</td>";
-			echo "<td></td>";
+			echo "<td>
+				<a href='update-user?id=" . $value->id ."' >Update</a>
+				<a href='remove-user?id=" . $value->id ."' >Remove</a>
+			</td>";
 			echo "</tr>";
 		}
 		 ?>

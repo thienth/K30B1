@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<form action="save-user" method="post">
+	<form action="save-user" method="post" enctype="multipart/form-data">
 		<div>
 			Email: <input type="text" name="email" value="" placeholder="">
 		</div>
@@ -18,7 +18,7 @@
 			Role: <input type="radio" name="role_id" value="100"> Member <input type="radio" name="role_id" value="300"> Mod <input type="radio" name="role_id" value="900"> Admin
 		</div>
 		<div>
-			Name: <input type="test" name="name" value="">
+			Name: <input type="text" name="name" value="">
 		</div>
 		<div>
 			Avatar: <input type="file" name="avatar" value="">
