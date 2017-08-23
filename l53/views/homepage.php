@@ -42,6 +42,88 @@
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
+	<div class="container">
+		<div class="hot-product">
+			<h3>Sản phẩm mới</h3>
+			<section class="col-sm-3 bg-success">
+				<a href="#" class="thumbnail">
+			      <img src="uploads/599ab0ff2b1a6-cay-ke.jpg" alt="">
+			    </a>
+				<a href="#" title="">Samsung Galaxy s8</a>
+				<span class="product-price">8000000 vnđ</span>
+			</section>
+
+			<section class="col-sm-3 bg-success">
+				<a href="#" class="thumbnail">
+			      <img src="uploads/599ab0ff2b1a6-cay-ke.jpg" alt="">
+			    </a>
+				<a href="#" title="">Samsung Galaxy s8</a>
+				<span class="product-price">8000000 vnđ</span>
+			</section>
+
+			<section class="col-sm-3 bg-success">
+				<a href="#" class="thumbnail">
+			      <img src="uploads/599ab0ff2b1a6-cay-ke.jpg" alt="">
+			    </a>
+				<a href="#" title="">Samsung Galaxy s8</a>
+				<span class="product-price">8000000 vnđ</span>
+			</section>
+
+			<section class="col-sm-3 bg-success">
+				<a href="#" class="thumbnail">
+			      <img src="uploads/599ab0ff2b1a6-cay-ke.jpg" alt="">
+			    </a>
+				<a href="#" title="">Samsung Galaxy s8</a>
+				<span class="product-price">8000000 vnđ</span>
+			</section>
+
+		</div>
+			<h3>Sản phẩm nổi bật</h3>
+			<section class="col-sm-3 bg-success">
+				<a href="#" class="thumbnail">
+			      <img src="uploads/599ab0ff2b1a6-cay-ke.jpg" alt="">
+			    </a>
+				<a href="#" title="">Samsung Galaxy s8</a>
+				<span class="product-price">8000000 vnđ</span>
+			</section>
+
+			<section class="col-sm-3 bg-success">
+				<a href="#" class="thumbnail">
+			      <img src="uploads/599ab0ff2b1a6-cay-ke.jpg" alt="">
+			    </a>
+				<a href="#" title="">Samsung Galaxy s8</a>
+				<span class="product-price">8000000 vnđ</span>
+			</section>
+
+			<section class="col-sm-3 bg-success">
+				<a href="#" class="thumbnail">
+			      <img src="uploads/599ab0ff2b1a6-cay-ke.jpg" alt="">
+			    </a>
+				<a href="#" title="">Samsung Galaxy s8</a>
+				<span class="product-price">8000000 vnđ</span>
+			</section>
+
+			<section class="col-sm-3 bg-success">
+				<a href="#" class="thumbnail">
+			      <img src="uploads/599ab0ff2b1a6-cay-ke.jpg" alt="">
+			    </a>
+				<a href="#" title="">Samsung Galaxy s8</a>
+				<span class="product-price">8000000 vnđ</span>
+			</section>
+
+		</div>
+	</div>
+	<footer>
+		<div class="col-md-4">
+			Chi nhánh
+		</div>
+		<div class="col-md-4">
+			Facebook group
+		</div>
+		<div class="col-md-4">
+			Bản đồ
+		</div>
+	</footer>
 
 	<script type="text/javascript" src="public/plugins/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="public/plugins/bootstrap/js/bootstrap.min.js"></script>
