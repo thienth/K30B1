@@ -1,5 +1,5 @@
 <?php 
-require 'models/BaseModel.php';
+require_once 'models/BaseModel.php';
 class UserModel extends BaseModel
 {
 	public static $table = 'users';

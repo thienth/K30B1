@@ -7,8 +7,10 @@ class HomeController
 {
 	
 	function index(){
-		$users = UserModel::all();
+		
+		include_once 'views/layouts/client/header.php';
 		include 'views/homepage.php';
+		include_once 'views/layouts/client/footer.php';
 	}
 }
 

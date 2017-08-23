@@ -152,7 +152,7 @@ class BaseModel
 	public function first(){
 		
 		$conn = BaseModel::getConnect();
-		if($this->orderByArr != null && count($this->orderByArr) > 0){
+		if(isset($this->orderByArr) == true && $this->orderByArr != null && count($this->orderByArr) > 0){
 			$this->queryBuilder .= " order by ";
 			foreach ($this->orderByArr as $key => $value) {
 				$this->queryBuilder .= " $key $value, ";
