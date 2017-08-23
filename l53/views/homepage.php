@@ -42,5 +42,8 @@
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
+
+	<script type="text/javascript" src="public/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="public/plugins/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
