@@ -55,7 +55,7 @@ $cates = CategoryModel::where('in_nav', 1)->get();
 	      	foreach ($cates as $c) {
 	      		?>
 	        	<li>
-	        		<a href="cate/<?= $c->id?>">
+	        		<a href="cate?id=<?= $c->id?>">
 	        			<?= $c->name  ?>
 	        		</a>
         		</li>
