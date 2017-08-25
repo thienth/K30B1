@@ -12,4 +12,7 @@ function product_price($priceFloat) {
 	return $price.$symbol;
 }
 
+function url($url){
+	return "http://localhost/k30b1_repo/l54/$url";
+}
  ?>

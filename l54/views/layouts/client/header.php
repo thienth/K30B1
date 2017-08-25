@@ -11,8 +11,8 @@ $cates = CategoryModel::where('in_nav', 1)->get();
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="public/plugins/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="public/css/main.css">
+	<link rel="stylesheet" href="<?= url('public/plugins/bootstrap/css/bootstrap.min.css')?>">
+	<link rel="stylesheet" type="text/css" href="<?= url('public/css/main.css')?>">
 </head>
 <body>
 	<script>
@@ -43,8 +43,8 @@ $cates = CategoryModel::where('in_nav', 1)->get();
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="http://localhost/k30b1_repo/l54/">
-	      	<img src="<?= $config->logo_url?>" alt="">
+	      <a class="navbar-brand" href="<?= url()?>">
+	      	<img src="<?= url($config->logo_url)?>" alt="">
 	      </a>
 	    </div>
 

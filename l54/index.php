@@ -3,6 +3,7 @@ session_start();
 require_once 'commons/utils.php';
 require_once 'controllers/HomeController.php';
 require_once 'controllers/UserController.php';
+require_once 'controllers/admin/CategoryController.php';
 
 $url = isset($_GET['url']) == true ? $_GET['url'] : "/";
 
@@ -18,6 +19,10 @@ switch ($url) {
 	case 'cate':
 		$ctl = new HomeController();
 		$ctl->detailCategory();
+		break;
+	case 'admin/category/add':
+		$ctl = new CategoryController();
+		$ctl->addCateForm();
 		break;
 	case 'create':
 		$ctl = new UserController();
