@@ -11,6 +11,10 @@ switch ($url) {
 		$ctl = new HomeController();
 		$ctl->index();
 		break;
+	case 'detail':
+		$ctl = new HomeController();
+		$ctl->detailProduct();
+		break;
 	case 'create':
 		$ctl = new UserController();
 		$ctl->createUser();

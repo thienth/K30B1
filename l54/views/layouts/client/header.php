@@ -43,7 +43,7 @@ $cates = CategoryModel::where('in_nav', 1)->get();
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="http://localhost/k30b1_repo/l53/">
+	      <a class="navbar-brand" href="http://localhost/k30b1_repo/l54/">
 	      	<img src="<?= $config->logo_url?>" alt="">
 	      </a>
 	    </div>
