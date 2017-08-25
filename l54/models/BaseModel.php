@@ -210,7 +210,6 @@ class BaseModel
 		$query = "select * from " . static::$table;
 		$conn = BaseModel::getConnect();
 		$stmt = $conn->prepare($query);
-		$stmt->bindValue(':id', $id);
 		$stmt->execute();
 		$rs = $stmt->fetchAll(PDO::FETCH_CLASS, static::class);
 
