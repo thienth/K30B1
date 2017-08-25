@@ -1,4 +1,4 @@
-	<footer>
+	<footer class="clearfix">
 		<div class="col-md-4">
 			<ol>
 				<li>
