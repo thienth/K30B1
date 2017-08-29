@@ -8,6 +8,7 @@ class BaseModel
 	// Thực hiện thêm mới/cập nhật thông tin của đối tượng
 	public function save(){
 		$connect = BaseModel::getConnect();
+
 		if(!isset($this->id) || $this->id == null || $this->id <= 0){
 			// Xây dựng câu query insert into tablename (
 			$this->queryBuilder = "insert into " . $this::$table;
@@ -34,7 +35,7 @@ class BaseModel
 				$data = isset($this->{$this::$attributes[$i]}) == false ? "": $this->{$this::$attributes[$i]};
 				$stmt->bindValue(":" . $this::$attributes[$i] , $data);
 			}
-
+			// dd($this->queryBuilder);
 			// Thực hiện thực thi câu lệnh với cơ sở dữ liệu
 			$result = $stmt->execute();
 

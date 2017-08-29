@@ -1,5 +1,6 @@
 <div class="col-sm-8 col-sm-offset-2">
-	<form action="" method="post" enctype="multipart/form-data" role="form" novalidate>
+	<form action="<?= url('admin/product/save') ?>" method="post" enctype="multipart/form-data" role="form" novalidate>
+		<input type="hidden" name="id" value="<?= $model->id  ?>">
 		<div class="form-group">
 			<label for="productName">Product Name <span class="text-danger">*</span></label>
 			<input id="productName" type="text" name="product_name" value="<?= $model->product_name  ?>" class="form-control" placeholder="Product Name">
@@ -28,7 +29,7 @@
 		</div>
 		<div class="form-group">
 			<label for="desc">Product Detail</label>
-			<textarea name="product_detail" class="form-control">
+			<textarea id="editor" name="product_detail" class="form-control">
 				<?= $model->product_detail  ?>
 			</textarea>
 		</div>

@@ -33,6 +33,14 @@ switch ($url) {
 		$ctl = new ProductController();
 		$ctl->add();
 		break;
+	case 'admin/product/edit':
+		$ctl = new ProductController();
+		$ctl->edit();
+		break;
+	case 'admin/product/save':
+		$ctl = new ProductController();
+		$ctl->save();
+		break;
 	case 'create':
 		$ctl = new UserController();
 		$ctl->createUser();

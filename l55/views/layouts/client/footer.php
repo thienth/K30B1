@@ -28,5 +28,10 @@
 	<script type="text/javascript" src="<?= url('public/plugins/jquery/jquery.min.js')?>"></script>
 	<script type="text/javascript" src="<?= url('public/plugins/bootstrap/js/bootstrap.min.js')?>"></script>
 
+	<script type="text/javascript" src="<?= url('public/tinymce/jquery.tinymce.min.js')?>"></script>
+	<script type="text/javascript" src="<?= url('public/tinymce/tinymce.min.js')?>"></script>
+	<script type="text/javascript">
+		tinymce.init({ selector:'textarea#editor' });
+	</script>
 </body>
 </html>
