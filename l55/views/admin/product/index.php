@@ -8,7 +8,7 @@
 			<th>Sell Price</th>
 			<th>Image</th>
 			<th>
-				<a href="<? url('admin/product/add')  ?>" class="btn btn-success btn-sm" title="">Create</a>
+				<a href="<?= url('admin/product/add')  ?>" class="btn btn-success btn-sm" title="">Create</a>
 			</th>
 		</tr>
 	</thead>

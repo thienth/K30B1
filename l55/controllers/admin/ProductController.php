@@ -16,6 +16,15 @@ class ProductController
 		include 'views/admin/product/index.php';
 		include_once 'views/layouts/client/footer.php';
 	}
+
+	function add(){
+		$model = new ProductModel();
+		$cates = CategoryModel::all();
+
+		include_once 'views/layouts/client/header.php';
+		include 'views/admin/product/form.php';
+		include_once 'views/layouts/client/footer.php';
+	}
 }
 
  ?>

@@ -29,6 +29,10 @@ switch ($url) {
 		$ctl = new ProductController();
 		$ctl->index();
 		break;
+	case 'admin/product/add':
+		$ctl = new ProductController();
+		$ctl->add();
+		break;
 	case 'create':
 		$ctl = new UserController();
 		$ctl->createUser();
