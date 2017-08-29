@@ -4,6 +4,7 @@ require_once 'commons/utils.php';
 require_once 'controllers/HomeController.php';
 require_once 'controllers/UserController.php';
 require_once 'controllers/admin/CategoryController.php';
+require_once 'controllers/admin/ProductController.php';
 
 $url = isset($_GET['url']) == true ? $_GET['url'] : "/";
 
