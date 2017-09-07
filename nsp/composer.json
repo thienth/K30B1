@@ -1,0 +1,19 @@
+{
+    "name": "gin/nsp",
+    "authors": [
+        {
+            "name": "thienth32",
+            "email": "thienth32@gmail.com"
+        }
+    ],
+    "require": {
+        "phroute/phroute": "^2.1"
+    },
+    "autoload": {
+    	"psr-4": {
+            "Controller\\": "controllers/",
+            "Model\\": "models/",
+            "MongoModel\\": "mongo_model/"
+        }
+    }
+}
