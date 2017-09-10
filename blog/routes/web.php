@@ -10,21 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('triangle');
-})->name('homepage');
 
-Route::get('homepage', function(){
-	$name = '<a href="#">quanhiv</a>';
-	$age = 25;
-	$pageTitle = 'Quan detail';
-	$arr = [
-		['name' => 'linhnt', 'age' => 15],
-		['name' => 'tu anh', 'age' => 16],
-		['name' => 'Đạt lé', 'age' => 18],
-	];
-	return view('homepage', compact('name', 'age', 'pageTitle', 'arr'));
-});
+
+Route::get('/', 'HomeController@index')->name('homepage');
+
+Route::get('test', function(){
+	return "redirect target";
+})->name('test');
+
+Route::get('add-product/{name}/{listPrice}/{sellPrice}', 'HomeController@addProduct')->name('add-product');
 
