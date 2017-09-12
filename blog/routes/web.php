@@ -21,3 +21,10 @@ Route::get('test', function(){
 
 Route::get('add-product/{name}/{listPrice}/{sellPrice}', 'HomeController@addProduct')->name('add-product');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', function(){
+	return 'dashboard page';
+})->name('dashboard');

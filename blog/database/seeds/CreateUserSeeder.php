@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-// use Hash;
-// use DB;
 class CreateUserSeeder extends Seeder
 {
     /**
