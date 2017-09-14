@@ -19,7 +19,7 @@ Route::get('/', function(){
 
 Auth::routes();
 
-Route::get('admin', function(){
-	return view('admin.dashboard');
-})->name('dashboard');
+Route::get('generate-pwd/{pwd}', function($pwd){
+	return Hash::make($pwd);
+});
 
