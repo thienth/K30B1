@@ -1,0 +1,11 @@
+.minwidth-60{
+    min-width: 60px;
+}
+.relative{
+    position: relative;
+}
+.btn-remove-relative{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

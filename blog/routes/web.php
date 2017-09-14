@@ -13,18 +13,13 @@
 
 
 
-Route::get('/', 'HomeController@index')->name('homepage');
-
-Route::get('test', function(){
-	return "redirect target";
-})->name('test');
-
-Route::get('add-product/{name}/{listPrice}/{sellPrice}', 'HomeController@addProduct')->name('add-product');
-
+Route::get('/', function(){
+	return 'homepage';
+})->name('homepage');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/dashboard', function(){
-	return 'dashboard page';
+Route::get('admin', function(){
+	return view('admin.dashboard');
 })->name('dashboard');
+
