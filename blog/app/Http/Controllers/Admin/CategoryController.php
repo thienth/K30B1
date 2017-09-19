@@ -15,7 +15,16 @@ class CategoryController extends Controller
     }
 
     public function add(){
-    	$model = new Category();
+        $model = new Category();
+        $cates = Category::where('is_major', 1)->get();
+        return view ('admin.category.form', compact('model', 'cates'));
+    }
+
+    public function edit($id){
+    	$model = Category::find($id);
+        if(!$model){
+            return abort(404, 'id không tồn tại');
+        }
     	$cates = Category::where('is_major', 1)->get();
     	return view ('admin.category.form', compact('model', 'cates'));
     }

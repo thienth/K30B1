@@ -24,7 +24,7 @@
 						@endif
 					</td>
 					<td>
-						<a href="" class="btn btn-info btn-sm">Edit</a>
+						<a href="{{ route('cate.edit', ['id' => $c->id]) }}" class="btn btn-info btn-sm">Edit</a>
 						<a href="" class="btn btn-danger btn-sm">Remove</a>
 					</td>
 				</tr>

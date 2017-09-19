@@ -27,7 +27,7 @@
 
 		<div class="form-group text-center">
 			<a href="{{ route('dashboard') }}" class="btn btn-sm btn-danger">Huỷ</a>
-			<button type="submit" class="btn btn-sm btn-success"></button>
+			<button type="submit" class="btn btn-sm btn-success">Gửi</button>
 		</div>
 	</form>
 @endsection
