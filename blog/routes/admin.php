@@ -9,5 +9,10 @@ Route::get('category/add',
 	'Admin\CategoryController@add')->name('cate.add');
 Route::get('category/edit/{id}', 
 	'Admin\CategoryController@edit')->name('cate.edit');
+Route::post('category/save', 
+	'Admin\CategoryController@save')->name('cate.save');
+Route::get('category/remove/{id}', 
+	'Admin\CategoryController@remove')->name('cate.remove');
+
 
  ?>

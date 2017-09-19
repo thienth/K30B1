@@ -25,7 +25,7 @@
 					</td>
 					<td>
 						<a href="{{ route('cate.edit', ['id' => $c->id]) }}" class="btn btn-info btn-sm">Edit</a>
-						<a href="" class="btn btn-danger btn-sm">Remove</a>
+						<a href="{{ route('cate.remove', ['id' => $c->id]) }}" class="btn btn-danger btn-sm">Remove</a>
 					</td>
 				</tr>
 			@endforeach
