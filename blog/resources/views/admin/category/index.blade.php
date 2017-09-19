@@ -8,7 +8,7 @@
 			<th>Tên danh mục</th>
 			<th>Danh mục gốc</th>
 			<th>
-				<a href="" class="btn btn-sm btn-success">
+				<a href="{{route('cate.add')}}" class="btn btn-sm btn-success">
 					<i class="fa fa-plus"></i> Tạo mới
 				</a>
 			</th>

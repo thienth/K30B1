@@ -13,4 +13,10 @@ class CategoryController extends Controller
     	
     	return view('admin.category.index', compact('cates'));
     }
+
+    public function add(){
+    	$model = new Category();
+    	$cates = Category::where('is_major', 1)->get();
+    	return view ('admin.category.form', compact('model', 'cates'));
+    }
 }
