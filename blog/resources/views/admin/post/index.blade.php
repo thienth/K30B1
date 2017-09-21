@@ -26,7 +26,9 @@
 			@foreach ($posts as $p)
 				<tr>
 					<td>{{$p->id}}</td>
-					<td>{{$p->feature_image}}</td>
+					<td>
+						<img src="{{ asset($p->feature_image) }}" width="80" >
+					</td>
 					<td>{{$p->title}}</td>
 					<td>
 						{{$p->getCateName()}}

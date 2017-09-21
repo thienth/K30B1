@@ -5,15 +5,19 @@
 @section('title', $title)
 @section('content')
 
-	<form action="{{ route('cate.save') }}" method="post" class="col-sm-8 col-sm-offset-2">
+	<form action="{{ route('post.save') }}" method="post" class="col-sm-8 col-sm-offset-2" enctype="multipart/form-data">
 		{{csrf_field()}}
 		<input type="hidden" name="id" value="{{$model->id}}">
 		<div class="form-group">
 			<label for="">Tiêu đề</label>
-			<input type="text" name="name" value="{{old('name', $model->name)}}" class="form-control">
+			<input type="text" name="title" value="{{old('title', $model->title)}}" class="form-control">
 			@if($errors)
-				<span class="text-danger">{{$errors->first('name')}}</span>
+				<span class="text-danger">{{$errors->first('title')}}</span>
 			@endif
+		</div>
+		<div class="form-group">
+			<label for="">Ảnh</label>
+			<input type="file" name="feature_image" class="form-control">
 		</div>
 		<div class="form-group">
 			<label for="">Danh mục cha</label>
