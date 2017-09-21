@@ -15,4 +15,7 @@ Route::get('category/remove/{id}',
 	'Admin\CategoryController@remove')->name('cate.remove');
 
 
+Route::get('post', 'Admin\PostController@index')->name('post.index');
+Route::get('post/add', 
+	'Admin\PostController@add')->name('post.add');
  ?>

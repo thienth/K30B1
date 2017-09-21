@@ -50,7 +50,7 @@
 <script src="{!! asset('admin_assets/scripts/demo.js') !!}" type="text/javascript"></script>
 <script>
     tinymce.init({
-        selector: "textarea#editor",theme: "modern",width: '100%',height: 300,
+        selector: "textarea.editor",theme: "modern",width: '100%',height: 300,
         plugins: [
             "advlist autolink link image lists charmap print preview hr anchor pagebreak",
             "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
