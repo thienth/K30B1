@@ -23,3 +23,21 @@ Route::get('generate-pwd/{pwd}', function($pwd){
 	return Hash::make($pwd);
 });
 
+Route::get('test-send-mail', function(){
+		$user = App\User::find(3);
+		Mail::send('mail_template.test', ['username' => $user->name], function ($message) {
+	    $message->from('nguyenlinh980224@gmail.com', 'Nguyen Linh');
+	    // $message->sender('thienth3@fe.edu.vn', 'thien tran');
+
+	    $message->to('thienth32@gmail.com', 'Tran Huu Thien');
+
+	    $message->replyTo('nguyenlinh980224@gmail.com', 'Nguyen Linh');
+
+	    $message->subject('Test send email');
+
+	    $message->priority(3);
+
+	    // $message->attach('pathToFile');
+	});
+});
+
