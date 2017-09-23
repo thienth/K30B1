@@ -21,9 +21,11 @@ class LoginController extends Controller
     use AuthenticatesUsers;
     protected function authenticated(Request $request, $user)
     {
-    // if ( $user->isAdmin() ) {// do your margic here
-        return redirect()->route('dashboard');
-    // }
+        if ( $user->role == 5 ) {// do your margic here
+            return redirect()->route('dashboard');
+        }else{
+            return redirect()->route('homepage');
+        }
 
      // return redirect('/home');
     }

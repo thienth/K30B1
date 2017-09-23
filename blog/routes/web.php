@@ -17,6 +17,11 @@ Route::get('/', function(){
 	return 'homepage';
 })->name('homepage');
 
+Route::get('logout', function(){
+	Auth::logout();
+	return redirect()->route('login');
+})->name('logout');
+
 Auth::routes();
 
 Route::get('generate-pwd/{pwd}', function($pwd){
