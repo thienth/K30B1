@@ -7,6 +7,10 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	Email gửi bởi {{$username}}
+	<h2>Xin chao {{$username}},</h2> 
+	<p>
+		<strong>URL de lay lai mat khau cua ban la </strong>
+		<a href="{{route('reset-password', ['token' => $token])}}" title="">Click vao day</a>
+	</p>
 </body>
 </html>

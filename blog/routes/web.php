@@ -23,9 +23,32 @@ Route::get('generate-pwd/{pwd}', function($pwd){
 	return Hash::make($pwd);
 });
 
+Route::get('reset-password/{token}', function($token){
+	$remember = DB::table('password_resets')->where('token', $token)->first();
+
+	$yesterday = Carbon\Carbon::parse($remember->created_at);
+	
+	$now = Carbon\Carbon::now();
+   	$between = $now->diffInDays($yesterday);
+   	// neu thoi gian tu luc gui email cho den hien tai  >= 1
+   	// tra ve cho ho 1 message da qua thoi gian lay lai mat kha, ban vui long lam lai
+   	if($between == 0){
+   		return view('reset-password', ['forget_token' => $token]);
+   	}
+	
+})->name('reset-password');
+
 Route::get('test-send-mail', function(){
-		$user = App\User::find(3);
-		Mail::send('mail_template.test', ['username' => $user->name], function ($message) {
+	// 1 Kiem tra user co trong he thong hay khong
+	$user = App\User::where('email', 'thienth32@gmail.com')->first();
+	$token = str_random(32);
+	DB::table('password_resets')->insert([
+		'email' => $user->email,
+		'token' => $token,
+		'created_at' => Carbon\Carbon::now()
+	]);
+
+	Mail::send('mail_template.test', ['username' => $user->name, 'token' => $token], function ($message) {
 	    $message->from('nguyenlinh980224@gmail.com', 'Nguyen Linh');
 	    // $message->sender('thienth3@fe.edu.vn', 'thien tran');
 
@@ -39,5 +62,9 @@ Route::get('test-send-mail', function(){
 
 	    // $message->attach('pathToFile');
 	});
+});
+
+Route::get('pwd-generate/{pwd}', function($pwd){
+	return Hash::make($pwd);
 });
 
