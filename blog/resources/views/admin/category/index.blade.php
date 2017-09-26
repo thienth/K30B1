@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('title', "Quản lý danh mục")
 @section('content')
-
 	<table class="table table-striped">
 		<thead>
 			<th>#</th>
